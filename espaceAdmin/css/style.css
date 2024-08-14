@@ -1,0 +1,285 @@
+header #ensemble .box-nav .Logo nav ul li a {
+  font-size: 16px;
+  text-align: center;
+  font-weight: bolder;
+  color: rgb(246, 246, 246);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  height: 150px;
+  background: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+}
+header #ensemble {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+header #ensemble .box-nav {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(10deg, rgb(195, 1, 1), black);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: space-between;
+  list-style: none;
+}
+header #ensemble .box-nav .Logo {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+}
+header #ensemble .box-nav .Logo #imgLogo {
+  width: 20%;
+  height: 70%;
+  background-image: url(../../assets/photo/ankoaylogo.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+header #ensemble .box-nav .Logo nav {
+  width: 70%;
+  height: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+}
+header #ensemble .box-nav .Logo nav ul {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+}
+header #ensemble .box-nav .Logo nav ul li {
+  width: auto;
+  height: 100%;
+  padding: 20px 0;
+}
+header #ensemble .box-nav .Logo nav ul li:hover {
+  transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  cursor: pointer;
+  font-family: arial;
+  border-bottom: 5px solid rgb(115, 112, 112);
+}
+
+#section {
+  width: 100%;
+  height: 100vh;
+  background: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  overflow: hidden;
+}
+#section .background {
+  width: 60%;
+  height: 70vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+}
+
+#sectionIndex {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  overflow: hidden;
+}
+#sectionIndex .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+}
+#sectionIndex .container form {
+  width: 100%;
+  height: 90%;
+}
+
+#sectionModifier-Article {
+  width: 100%;
+  height: 50em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+}
+#sectionModifier-Article .container {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+}
+#sectionModifier-Article .container form {
+  width: 100%;
+  height: 90%;
+}
+
+#sectionModifier-Evenement {
+  width: 100%;
+  height: 40em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+}
+#sectionModifier-Evenement .container {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+}
+#sectionModifier-Evenement .container form {
+  width: 60%;
+  height: 90%;
+}
+
+#sectionNouveau_Article {
+  width: 100%;
+  height: 100vh;
+  background: rgb(246, 246, 246);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  overflow: hidden;
+}
+#sectionNouveau_Article .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+}
+
+#sectionNouveau_Events {
+  background: rgb(246, 246, 246);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  overflow: hidden;
+  padding: 10px;
+}
+#sectionNouveau_Events .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  width: 50%;
+  height: auto;
+}
+
+#sectionJoueurAd {
+  width: 100%;
+  height: auto;
+}
+
+#sectionUtilisateur {
+  width: 100%;
+  height: auto;
+  background-color: rgb(246, 246, 246);
+}
+
+#sectionNouveau_Joueur {
+  width: 100%;
+  height: 50em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+}
+#sectionNouveau_Joueur .container {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+}
+#sectionNouveau_Joueur .container form {
+  width: 100%;
+  height: 90%;
+}
+
+footer {
+  width: 100%;
+  height: 10vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  text-align: center;
+}
+footer h3 {
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */

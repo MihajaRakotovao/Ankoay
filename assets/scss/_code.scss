@@ -1,0 +1,944 @@
+@include tout();
+body{
+    @include over;
+}
+@import 'componement/headerRes.scss';
+#section{
+    @include taille(100%,100vh);
+    @include bg(black);
+    @include flexibilite(row);
+    @include overfl();
+    img{
+        @include taille(80%,100%);
+    }
+    .box-rebours{
+        @include taille(20%,100%);
+        @include flexibilite();
+        @include pad(10px,20px);
+        @extend %Tal;
+        .box_jour, .box_heure, .box_minute, .box_seconde{
+            @include pad(10px,10px);
+        }
+        #jour, #heure, #minute, #seconde{
+            @include bg(rgba(128, 128, 128, 0.71));
+            @include pad(10px,20px);
+            @include link(black,26px,bold);
+        }
+        #jour_label,p, #heure_label, #minute_label, #seconde_label{
+            @include link(white,20px,normal);
+            @include textSh($fotsy);
+        }
+    }
+    @include breakpoint(320px,max){
+        @include taille(100%,100%);
+        padding: 10px 0;
+        @include flexibilite(column,space-around);
+        img{
+            @include taille(80%,100%);
+        }
+        .box-rebours{
+            @include taille(100%,100%);
+            @include flexibilite(column,space-around);
+            
+        }
+    }
+}
+#section2{
+    @include taille(100%,200em);
+    @include bg(rgb(175, 174, 174));
+    @include flexibilite(row);
+    @include bgAttach;
+    @include breakpoint(320px,max){
+        @include taille(100%,110em);
+        .resume{
+            display: none;
+        }
+    }
+
+    .partie{
+        @include taille(80%,100%);
+        @include flexibilite(column,space-between);
+
+        @include breakpoint(320px,max){
+            @include taille(100%,100%);
+            
+        }
+        .Accueil{
+            @include taille(100%,20em);
+            @include position(relative);
+            z-index: 2;
+
+            @include breakpoint(320px,max){
+                @include taille(100%,10em);
+                
+            }
+            #drap1{
+                @include taille(60%,10%);
+                @include clipPath(polygon(0 0, 100% 0, 98% 100%, 0% 100%));
+                @include bg(linear-gradient(120deg,white,red,green));
+                @include flexibilite();
+                @include position(relative,none,none,none,15%);
+            }
+            #equipe{
+                @include taille(100%,90%);
+                @include flexibilite(row);
+                @include position(relative,-10%,none,none,none);
+                #eventsG{
+                    @include taille(75%,100%);
+                    @include bg(black);
+                    @include clipPath(polygon(0 0, 100% 0, 90% 100%, 0% 100%));
+                    @include position(absolute,none,0%,none,10%);
+                    @include flexibilite();
+                    @include alignI(flex-start);
+                    @include pad(0,30px);
+                    div{
+                        @include taille(70%,80%);
+                        @include Talign(justify);
+                        #{c}: $fotsy;
+                        @include flexibilite();
+                        h1{
+                            @include link($fotsy,46px);
+                            @extend %Tal;
+                        }
+                        h2{
+                            @include link($fotsy,26px);
+                        }
+
+                        @include breakpoint(320px,max){
+                            h1,h2{
+                                #{$fs}: 10px
+                            }
+                        }
+                        @include breakpoint(1910px,min){
+                            h1,h2{
+                                #{$fs}: 38px
+                            }
+                        }
+                    }
+                }
+                #eventsD{
+                    @include taille(45%,100%);
+                    @include clipPath( polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%));
+                    @include position(absolute,none,none,0%,none);
+                    #box_events1{
+                        @include taille(100%,100%);
+                        @include flexbox(flex,row,none,none,none);
+                        img{
+                            @include taille(100%,auto);
+                            @include flexSh(0);
+                            @include anime(slider1,15s,linear,infinite);
+                            @keyframes slider1 {
+                                0%,10%{
+                                    transform: translateX(0);
+                                }
+                                50%,60%{
+                                    transform: translateX(-100%);
+                                }
+                                90%,100%{
+                                    transform: translateX(0%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        .apropos{
+            @include taille(80%,25em);
+            @include bg(linear-gradient(10deg,black,white));
+            @include flexbox(flex,row,none,space-around,none);
+            @include borderR(20px);
+            @include breakpoint(320px,max){
+                @include taille(100%,10em);
+            }
+
+            #imgPropos{
+                @include taille(60%,100%);
+                @include clipPath(polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%));
+                @include bgImg(url(../photo/basket2.jpg));
+            }
+            #propos{
+                @include taille(30%,100%);
+                @include pad(10px,10px);
+                @extend %Tal;
+                h1{
+                    @include link($noirB,36px);
+                }
+                h3{
+                    @include link($noirB,22px);
+                }
+                button{
+                    @extend %btn;
+                    #{$c}: $noirB;
+                }
+
+                @include breakpoint(320px,max){
+                    @include flexibilite(column,space-around);
+                    @include pad(10px,10px);
+                    h1{
+                        #{$fs}: 26px;
+                    }
+                    p{display:none;}
+                    button{
+                        @include taille(100px,69px);
+                        #{$fs}: 12px;
+                        @include pad(5px,5px);
+                        &:hover{
+                            #{$fs}: 12px;
+                        }
+                    }
+                }
+                @include breakpoint(1910px,min){
+                    @include taille(80%,25em);
+
+                    h1,h3{
+                        #{$fs}: 36px;
+                    }
+                    p{
+                        #{$fs}: 28px;
+                    }
+                    button{
+                        @include taille(30%,69px);
+                        #{$fs}: 22px;
+                        @include pad(5px,5px);
+                        &:hover{
+                            #{$fs}: 12px;
+                        }
+                    }
+                }
+            }
+        }
+        .fil_actu{
+            @include taille(100%,auto);
+            @include flexibilite();
+            .actu{
+                @include taille(70%,auto);
+                @include bg(rgba(60, 58, 58, 0.681));
+                @include padding(0,0,0,20px);
+                @include marg(10px,0);
+                @include borderR(20px);
+
+                @include breakpoint(320px,max){
+                    @include taille(70%,auto);
+                }
+                @include breakpoint(1910px,min){
+                    span,p{
+                        #{$fs}:20px;
+                    }
+                }
+
+                #imgActu{
+                    @include taille(100%,20%);
+                    @include position(relative,0%,none,none,none);
+                    @include flexibilite();
+                    @include overfl;
+                    img{
+                        @include taille(100%,100%);
+                    }
+                    div{
+                        @include taille(90%,100%);
+                        @include position(absolute,0%,none,none,none);
+                        @include hita(hidden);
+                        @include transition;
+                        @include bg(rgba(0, 0, 0, 0.587));
+                        @include flexibilite();
+
+                        a{
+                            @extend %a2;
+                        }
+                    }
+                    &:hover{
+                        img{
+                            @include scale(1.1);
+                        }
+                        div{
+                            @include hita(visible);
+                        }
+                    }
+                    
+                }
+                h1{
+                    @include link($fotsy,36px);
+
+                    @include breakpoint(320px,max){
+                        @include link($fotsy,16px);
+
+                    }
+                }
+            }
+        }
+        .player{
+            @include taille(100%,35em);
+            @include bg(linear-gradient(10deg,black,rgb(107, 104, 104)));
+            @include flexibilite();
+            
+            
+            @include breakpoint(320px,max){
+                @include taille(100%,20em);
+            }
+            #up{
+                @include taille(100%,50%);
+                @include flexibilite(row);
+                @include pad(10px,10px);
+                .coach{
+                    @include taille(50%,100%);
+                    @include clipPath(polygon(0 0, 80% 0, 100% 100%, 0 100%));
+                    @include bgImg2(url(../photo/basket2.jpg));
+                    div{
+                        @include taille(100%,100%);
+                        @include flexibilite();
+                        a{  
+                           @extend %a3;                            
+                        }
+
+                        @include breakpoint(320px,max){
+                            a{
+                                #{$fs}: 12px;
+                            }
+                        }
+
+                        &:hover{
+                            a{
+                                #{$c}: rgb(208, 220, 219);
+                            }
+                            @include bg(rgba(0, 0, 0, 0.64));
+                        }
+                    }
+                }
+                .senior{
+                    @extend .coach;
+                    @include taille(50%,100%);
+                    @include clipPath(polygon(0 0, 100% 0%, 100% 100%, 20% 100%));
+                    @include bgImg2(url(../photo/sipaFond.png));
+                }
+            }
+            #down{
+                @include taille(100%,50%);
+                @include flexibilite(row);
+                @include pad(10px,10px);
+                .junior{
+                    @include taille(50%,100%);
+                    @include clipPath(polygon(0 0, 100% 0, 80% 100%, 0% 100%));
+                    @include bgImg2(url(../photo/post-basketball-3-769x416.jpg));
+                    @include flexibilite();
+                    div{
+                        @include taille(100%,100%);
+                        @include flexibilite();
+                        a{
+                            @extend %a3;
+                        }
+
+                        @include breakpoint(320px,max){
+                            a{
+                                #{$fs}: 12px;
+                            }
+                        }
+
+                        &:hover{
+                            a{
+                                #{$c}: rgb(208, 220, 219);
+                            }
+                            @include bg(rgba(0, 0, 0, 0.64));
+                        }
+                    }
+                }
+                .staff{
+                    @include taille(50%,100%);
+                    @include clipPath(polygon(20% 0, 100% 0, 100% 100%, 0% 100%));
+                    @include bgImg2(url(../photo/basket2.jpg));
+                    @extend .junior;
+                }
+            }
+        }
+    }
+    .resume{
+        @include taille(20%,100%);
+        @include bg(linear-gradient(10deg,black,white));
+        .details{
+            @include taille(100%,40%);
+            @include flexibilite();
+            @include pad(10px,10px);
+            .news{
+                @include taille(90%,auto);
+                @include bg(rgba(62, 59, 59, 0.678));
+                @include overfl;
+                @include borderR(10px);
+                @include flexibilite();
+                padding: 20px;
+                @include breakpoint(1910px,min){
+                    p{  
+                        padding-top: 10px;
+                       #{$fs}:30px;
+                    }
+                    a{
+                        #{$fs}:80px;
+                        
+                    }
+                }
+                p{  
+                    @include link($fotsyB,18px);
+                    #{$ff}: arial;
+                }
+                h2{
+                    @include link($fotsy,26px);
+                     @extend %Tal;
+                     #{$ff}: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                    }
+                a{
+                    @extend %Tal;
+                    @include link($fotsy,16px);
+                    @include pad(5px,5px);
+                    @include border(black);
+                }
+            }
+            .galerie{
+                @include taille(90%,25%);
+                @include bg(rgba(62, 59, 59, 0.678));
+                @include overfl;
+                @include borderR(10px);
+                #galerie_player{
+                    @include taille(100%,100%);
+                    #Galerie_Plus{
+                        @include taille(auto,100%);
+                        @include flexibilite();
+                        @include bgImg(url(../photo/post-basketball-4-207x152.jpg));
+                        @include bgStyle;
+                        div{
+                            @include taille(10vh,10vh);
+                            @include borderR(50%);
+                            @include border($fotsyB);
+                            @include flexibilite();
+                            a{
+                                @extend %a2;
+                                i{
+                                    #{$fs}: 20px;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+        
+    }
+
+}
+#sectionjoueur{
+    @include taille(100%,auto);
+    @include bg(linear-gradient(10deg,black,rgb(146, 7, 7)));
+    @include bgAttach;
+    @include flexibilite(row,space-around);
+    @include alignI(start);
+    #filtre{
+        @include taille(20%,40%);
+        @include flexibilite(column,space-between);
+        @include pad(20px,0);
+    }
+    .joueurs{
+        @include taille(80%,100%);
+        @include bg($noirB);
+        @include pad(10px,10px);
+        @include flexibilite(column,space-between);
+        .recherche{
+            @include taille(40%,60px);
+            @include flexibilite(row,space-between);
+            input{
+                @include taille(65%,100%);
+                @include borderR(10px);
+                @include pad(10px,10px);
+            }
+        }
+        span{
+            @include link($fotsy,36px);
+        }
+        .imgPlayer{
+            @include taille(100%,90%);
+            @include flexbox(flex,row,none,none,wrap);
+            .infoPlayer{
+                @include taille(10vw,50vh);
+                @include marg(0,5px);
+                @include overfl;
+                @include borderS;
+                img{
+                    @include taille(100%,50%);
+                    &:hover{
+                        @include scale(1.1);
+                    }
+                }
+                #detail{
+                    @include bg(rgb(10, 100, 10));
+                    @include taille(100%,40%);
+                    @include line;
+                    #{$c}: $fotsyB;
+                    @include position(relative);
+                    z-index: 2;
+                    @include pad(5px,5px);
+                    #{$fs}: 12px;
+                    h2{
+                        #{$fs}: 12px;
+                        @include transforme;
+                    }
+                }
+
+            }
+        }
+    }
+}
+#sectioninfo_joueur{
+    @include taille(100%,140vh); 
+    @include bgImg2( url(../photo/fond2.png));
+    @include flexibilite(column,space-around);
+    .box{
+        @include taille(30%,auto);
+        @include flexibilite(column,space-around);
+        @include bg(rgba(88, 104, 104, 0.591));
+        @include borderR(20px);
+        @include pad(10px,10px);
+        @include flexibilite(column,space-around);
+        .joueur_detail{
+            @include flexibilite(column,space-around);
+            #{$c}: $fotsy;
+            #imgActu{
+                @include taille(70%,auto);
+                @include flexibilite(column,space-around);
+            }
+        }
+    }
+}
+#sectionApropos{
+    @include taille(100%,60em);
+    @include bg(linear-gradient(10deg,black,rgb(146, 7, 7)));
+    @include bgAttach;
+    @include flexibilite();
+    #imgApropos{
+        @include taille(40%,40%);
+        @include borderR(70px);
+        @include bgImg(url(../photo/ankoay3.jpg));
+    }
+    #descri{
+        @include taille(70%,auto);
+        @extend %Tal;
+        #{$c}: $fotsy;
+        @include breakpoint(1910px,min){
+            p{  
+               #{$fs}:30px;
+            }
+        }
+    }
+
+
+}
+#sectionActu{
+    @include taille(100%,auto);
+    @include flexibilite();
+    .actu2{
+        @include taille(100%,auto);
+        @include flexibilite(row);
+        p{
+            #{$c}: $noir;
+        }
+        #imgActu{
+            @include taille(100%,auto);
+        }
+        @include breakpoint(1910px,min){
+            p,span{
+                #{$fs}: 20px;
+            }
+        }
+        #box-com{
+            @include borderR(10px);
+            @include pad(10px,10px);
+            @include marg(5px,5px);
+            @include flexibilite(column,space-around);
+            div{
+                @include border(black);
+                @include marg(10px,10px);
+                @include pad(10px,10px);
+                h3{
+                    #{$fs}: 12px;
+                }
+                span{
+                    #{$fw}: bold;
+                }
+            }
+        }
+    }
+    form{
+        @include taille(100%,auto);
+        @include flexibilite();
+            #coms{
+                @include taille(100%,50vh);
+                @include flexibilite();    
+            textarea{
+                @include taille(50%,20vh);
+                @include pad(10px,10px);
+            }
+            input{
+                @extend %btn;
+                #{$c}:$noirB;
+                @include marg(20px,20px);
+            }
+        }
+    }
+    .oldnews{
+        @include taille(90%,auto);
+        @include pad(3%,3%);
+        @include bg(rgba(128, 128, 128, 0.55));
+        @include flexibilite(row);
+        .allnews{
+            @include taille(20%,100%);
+            @include pad(10px,10px);
+            @include bg($fotsyB);
+            @include borderr;
+            @include overfl;
+            h1{
+                #{$fs}: 16px;
+            }
+            p{
+                #{$c}: $noir;
+                #{$fs}: 12px;
+            }
+            img{
+                @include taille(100%,auto);
+                &:hover{
+                    @include scale(1.1);
+                }
+            }
+            @include breakpoint(1910px,min){
+                h1{
+                    #{$fs}: 22px;
+                }
+                p{
+                    #{$fs}: 18px;
+                }
+                span{
+                    #{$fw}:bold;
+                }
+                a{
+                    #{$fs}: 20px;
+                }
+            }
+            
+        }
+    }
+}
+#sectionVideo{
+    @include taille(100%,auto);
+    @include flexibilite(column);
+    .actu2{
+        @include taille(100%,auto);
+        @include flexibilite(row);
+        p{
+            #{$c}: $noir;
+        }
+        #imgActu{
+            @include taille(100%,auto);
+            video{
+            @include taille(120vh,auto);
+            }
+        }
+        @include breakpoint(1910px,min){
+            p,span{
+                #{$fs}: 20px;
+            }
+        }
+    }
+    .oldnews{
+        @include taille(90%,40%);
+        @include pad(3%,3%);
+        @include bg(rgba(128, 128, 128, 0.55));
+        @include flexibilite(row);
+        .allnews{
+            @include taille(20%,80vh);
+            @include pad(10px,10px);
+            @include bg($fotsyB);
+            @include borderr;
+            @include overfl;
+            // @include flexibilite(column,space-between);
+
+            video{
+                @include taille(100%,auto);
+            }
+            h1{
+                #{$fs}: 16px;
+            }
+            p{
+                #{$c}: $noir;
+                #{$fs}: 12px;
+            }
+            img{
+                @include taille(100%,auto);
+                &:hover{
+                    @include scale(1.1);
+                }
+            }
+            @include breakpoint(1910px,min){
+                h1{
+                    #{$fs}: 22px;
+                }
+                p{
+                    #{$fs}: 18px;
+                }
+                span{
+                    #{$fw}:bold;
+                }
+                a{
+                    #{$fs}: 20px;
+                }
+            }
+            
+        }
+    }
+}
+#sectionContact{
+    @include taille(100%,140vh);
+    @include bgImg(url(../photo/fond2.png),center,cover,no-repeat);
+    @include bgblend;
+    .background{
+        @include taille(100%,100%);
+        @include overfl;
+        @include flexibilite(column,space-around);
+        img{
+            @include taille(35vw,auto);
+        }
+        #contactP{
+            @include taille(100%,30em);
+            @include flexibilite(column,space-around);
+            .but2{
+                @include taille(80%,50%);
+                @include BoxSha(black);
+                @include borderR(10px);
+                @include bg(rgb(0, 255, 89));
+                @include styleBtn;
+                @include margin(10%,10%,0,0);
+            }
+        }
+    }
+    
+}
+#sectionInscription{
+    @include taille(100%,140vh);
+    @include bgblend;
+    @include bgImg(url(../photo/fond2.png),center,cover,no-repeat);
+    .background{
+        @include taille(100%,100%);
+        @include overfl;
+        @include flexbox(flex,column,center,center,none);
+        #Inscript{
+            @include taille(100%,100%);
+            @include flexbox(flex,column,center,center,none);
+            @include margin(0,0,0,5%);
+            #Inscript2{
+                @include taille(70em,25em);
+                @include flexibilite(column,space-around);
+                input{
+                    @include taille(80%,15%);
+                    @include BoxSha($noirB);
+                    @include borderR(10px);
+                    @include padding(0,10px,0,0);
+                }
+            }
+            
+            #InscriptE {
+                @include taille(80%,10%);
+                @include flexibilite(column,space-around);
+            }
+            #btnConect{
+                @include taille(50%,10%);
+                @include BoxSha($noirB);
+                @include borderR(10px);
+                @include bg(rgb(0, 255, 89));
+                @include styleBtn;
+                @include margin(0,25%,0,0);
+            }
+        }
+    }
+    
+}
+#sectionConnexion{
+    @include taille(100%,100vh);
+    @include bgImg(url(../photo/fond2.png),center,cover,no-repeat);
+    @include bgblend;
+    .background{
+        @include taille(100%,100%);
+        @include overfl;
+        @include flexbox(flex,column,center,center,none);
+        @include breakpoint(1910px,min){
+            h1{
+                #{$fs}:42px;
+            }
+            input{  
+               #{$fs}:30px;
+            }
+        }
+    }
+}
+#sectionMembre{
+    @include taille(100%,140vh);
+    @include bgImg2(url(../photo/fond2.png));
+    @include flexibilite(column,space-around);
+    .couverture{
+        @include taille(100%,140vh);
+        @include bgImg2(url(../photo/fond2.png));
+    }
+    .background2{
+        @include taille(100%,60%);
+        @include flexbox(flex,column,center,center,none);
+        #sary{
+            @include taille(50vh,50vh);
+            @include borderRo(50%,50%);
+        }
+        h1{
+            #{$c}: $noirB;
+            @include textSh($fotsyB);
+        }
+        p{
+            @include para;
+        }
+        h2{
+            @include textSh($noirB);
+            #{$c}: $fotsy;
+        }
+        
+    }
+}
+
+#sectionCompete{
+    @include taille(100%,auto);
+    @include bgImg2(url(../photo/fond2.png));
+    @include flexibilite(column,space-around);
+    .box{
+        @include taille(60%,auto);
+        @include flexibilite(column,space-around);
+        @include bg(rgba(240, 255, 255, 0.591));
+        @include borderR(20px);
+        @include pad(10px,10px);
+        @include marg(20px,0);
+        img{
+            @include taille(100%,auto);
+        }
+        .imgEquipe{
+            @include taille(30%,auto);
+        }
+        h5{
+            #{$fs}: 16px;
+            #{$c}: $noirB;
+            @include textSh($fotsyB);
+        }
+        p{
+            @include para;
+        }
+        @include breakpoint(1910px,min){
+            @include taille(35%,auto);
+
+            p{
+             #{$fs}: 26px;
+                
+            }
+            h5{
+                #{$fs}:28px;
+            }
+        }
+    }
+}
+#section11{
+    @include taille(100%,70vh);
+    #contact{
+        @include taille(100%,100%);
+        @include bg(rgb(175, 174, 174));
+        @include flexibilite();
+        @include breakpoint(320px,max){
+            @include flexibilite(row,space-around);
+            @include pad(10px,10px);
+        }
+        .contactHaut{
+            @include taille(90%,80%);
+            @include flexibilite( row);
+            @include breakpoint(320px,max){
+                    @include flexibilite(column);
+                    @include taille(50%,100%);
+                }
+                .mail{
+                @include taille(25%,50%);
+                @include flexibilite(row);
+                .fonta{
+                    i{
+                        #{$fs}: 30px;
+                        @include breakpoint(320px,max){
+                            #{$fs}: 16px;
+                        }
+                    }
+                }
+                h1{
+                    @include breakpoint(320px,max){
+                        #{$fs}: 16px;
+                        text-align: center;
+                    } 
+                }
+                p{
+                    
+                    @include breakpoint(1910px,min){
+                            #{$fs}:20px;
+                    }
+                }
+            }
+        }
+        .contactBas{
+            @include taille(80%,30%);
+            @include flexbox(flex,row,center,space-around,none);
+            @include breakpoint(320px,max){
+                @include flexbox(flex,column,center,none,none);
+                @include taille(40%,100%);
+            }
+            .fontws{
+                @include taille(25vh,10vh);
+                @include flexibilite(row,space-around);
+                @include border($mena);
+                @include borderR(20px);
+                transition: all 0.5s ease-in;
+                a{
+                    text-decoration: none;
+                    #{$c}: $noirB;
+                    #{$fs}: $px*2;
+                    
+                }
+                &:hover a{
+                    @include scale(0.9);
+                    #{$c}: $mena;
+                }
+                &:hover{
+                    @include scale(0.9);
+                    @include border($noirB);
+                }
+                @include breakpoint(320px,max){
+                    @include taille(20vh,6vh);
+                    a{
+                        #{$fs}: 16px;
+                    }
+                }
+                @include breakpoint(1910px,min){
+                @include taille(30vh,10vh);
+
+                    a{
+
+                        #{$fs}:18px;
+                        text-transform: uppercase;
+                        #{$fw}:bold;
+                    }
+            }
+                
+            }
+        }
+    }
+}
+footer{
+    @include taille(100%,10vh);
+    @include bg($noirB);
+    @include flexibilite();
+    @extend %Tal;
+    h3{
+        #{$fs}: 16px;
+    }
+}

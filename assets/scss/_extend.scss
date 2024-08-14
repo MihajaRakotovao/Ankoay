@@ -1,0 +1,49 @@
+%btn{
+    width: $px*15;
+    height: $px*4;
+    #{$bc}: transparent;
+    #{$ff}: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    border-radius: $px;
+    border: 2px solid $mena;
+    box-shadow: 2px 2px 10px black;
+    font-size: $px+5;
+    color: $noirB;
+    &:hover{
+        #{$bc}: $mena;
+        border: none;
+        cursor: pointer;
+    }
+}
+%Tal{
+    text-align: center;
+}
+%a{
+    text-decoration: none;
+    color: $noir;
+    font-weight: bold;
+    font-family: arial;
+    font-size: 14px;
+}
+%fa{
+    #{$c}: $mena;
+}
+%Colmena{
+    #{$c}: $mena;
+}
+%a2{
+    font-size: 16px;   
+    text-align: center;
+    font-weight: bolder;
+    #{$c}: $fotsy;
+    text-decoration: none;
+    text-transform: uppercase;
+    #{$ff}: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+%a3{
+    font-size: 46px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+}

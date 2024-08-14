@@ -1,0 +1,36 @@
+$mena : rgb(180, 36, 36);
+$fotsyB:white;
+$fotsy:rgb(246, 246, 246);
+$vert: rgb(7, 190, 7);
+$noir: rgb(115, 112, 112);
+$noirB: black;
+$bc: background-color;
+$px: 10px;
+$c: color;
+$ff: font-family;
+$fs: font-size;
+$fw: font-weight;
+
+$breakpoints: (
+      sm: (
+        min: 576px,
+        max: 575px,
+      ),
+      md: (
+        min: 768px,
+        max: 767px,
+      ),
+      lg: (
+        min: 992px,
+        max: 991px,
+      ),
+      xl: (
+        min: 1200px,
+        max: 1199px,
+      ),
+      xxl: (
+        min: 1400px,
+        max: 1399px,
+      )
+
+);

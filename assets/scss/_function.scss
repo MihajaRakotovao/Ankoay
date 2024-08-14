@@ -1,0 +1,204 @@
+@mixin tout(){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}
+@mixin over{
+    overflow-x: hidden;
+}
+@mixin overfl{
+    overflow: hidden;
+}
+@mixin alignI($ai){
+    align-items: $ai;
+}
+@mixin Talign($ai){
+    text-align: $ai;
+}
+@mixin taille($w,$h){
+    width: $w;
+    height: $h;
+}
+@mixin bg($color){
+    background: $color;
+}
+@mixin hita($v){
+    visibility: $v;
+}
+@mixin transition{
+    transition: all 1s;
+}
+@mixin flexSh($v){
+    flex-shrink: $v;
+}
+@mixin anime($nom,$s,$t,$b){
+    animation-name: $nom;
+    animation-duration: $s;
+    animation-timing-function: $t;
+    animation-delay: $b;
+}
+@mixin bgImg($url,$bp:center,$bs:contain,$r:no-repeat){
+    background-image: $url;
+    background-position: $bp;
+    background-size: $bs;
+    background-repeat: $r;
+}
+@mixin bgImg2($url){
+    background-image: $url;
+}
+@mixin bgblend{
+    background-color: rgba(0, 0, 0, 0.592);
+    background-blend-mode: multiply;
+}
+@mixin bgStyle{
+    background-repeat: repeat;
+    background-color: rgba(62, 59, 59, 0.678);
+    background-blend-mode: multiply;
+}
+@mixin flexibilite ($fd:column,$jc:space-evenly){
+    display: flex;
+    justify-content: $jc;
+    align-items: center;
+    flex-direction: $fd;
+    list-style: none;
+}
+@mixin flexbox($flex,$fd,$al,$jc,$wrap){
+    display: $flex;
+    flex-direction: $fd;
+    align-items: $al;
+    justify-content: $jc;
+    flex-wrap: $wrap;
+}
+@mixin transform ($transform){
+    transform: $transform;
+    -moz-transform: $transform;
+    -o-transform:   $transform ;
+    -webkit-transform: $transform;
+    -ms-transform: $transform;
+}
+@mixin rotate ($rotate){
+    @include transform(rotate($rotate))
+}
+@mixin scale($scale){
+    @include transform(scale($scale));
+    cursor: pointer;
+}
+@mixin position($position,$t:0,$l:0,$r:0,$b:0){
+    position: $position;
+    top: $t;
+    left: $l;
+    right: $r;
+    bottom: $b;
+    
+}
+@mixin borderS{
+    border-radius: 10px 10px 0 0;
+}
+@mixin line{
+    line-height: 2px;
+}
+@mixin transforme{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+@mixin marg($t:0,$l:0){
+    margin: $t $l;
+}
+@mixin margin($t:0,$l:0,$r:0,$b:0){
+    margin-top: $t;
+    margin-left: $l;
+    margin-right: $r;
+    margin-bottom: $b;
+}
+@mixin pad($t:0,$l:0){
+    padding: $t $l;
+}
+@mixin padding($t:0,$l:0,$r:0,$b:0){
+    padding-top: $t;
+    padding-left: $l;
+    padding-right: $r;
+    padding-bottom: $b;
+}
+@mixin link($color,$fs,$fw:normal){
+    color: $color;
+    font-size: $fs;
+    text-decoration: none;
+    font-weight: $fw;
+}
+
+@mixin borderB($color){
+    border-bottom: 5px solid $color;
+}
+@mixin borderr{
+    border: 0.3px solid rgba(128, 128, 128, 0.55) ;
+}
+@mixin border($color){
+    border: 2px solid $color;
+}
+@mixin styleBtn{
+    #{$fw}: bolder;
+    #{$fs}: 26px;
+    #{$c}: $fotsyB;
+}
+@mixin borderR($v){
+    border-radius: $v;
+}
+@mixin borderRo($v,$t){
+    border-radius: $v $t;
+}
+@mixin para{
+    #{$fs}: 14px;
+    #{$c}: $noirB;
+    #{$fw}: bold;
+    text-shadow: 2px 2px 10px $fotsyB;
+}
+@mixin BoxSha($color){
+    border: none;
+    box-shadow: 0px 2px 5px $color;
+}
+@mixin textSh($color){
+    text-shadow: 2px 0px 10px $color;
+}
+@mixin textSh2($c){
+    text-shadow: 2px 2px 10px $c;
+}
+@mixin bgAttach{
+    background-attachment: fixed;
+}
+@mixin clipPath($clip){
+    clip-path: $clip;
+}
+
+// responsive
+@mixin breakpoint($breakpoint, $direction: min){
+    @if map-has-key($breakpoints , $breakpoint ){
+        $breakpoint-values: map-get($breakpoints , $breakpoint );
+        $breakpoint-min: map-get($breakpoint-values, min);
+        $breakpoint-max: map-get($breakpoint-values, max);
+
+        @if $direction == min{
+            @media (min-width: $breakpoint-min){
+                @content;
+            }
+        }
+        @else{
+            @media (max-width: $breakpoint-max){
+                @content;
+            }
+        }
+    }@else{
+
+        @if $direction == min{
+            @media (min-width: $breakpoint){
+                @content;
+            }
+        }
+        @else{
+            @media (max-width: $breakpoint){
+                @content;
+            }
+        }
+    }
+}

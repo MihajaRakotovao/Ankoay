@@ -1,0 +1,186 @@
+header{
+    @include taille(100%,150px);
+    @include bg($fotsyB);
+    @include flexibilite();
+    #ensemble{
+        @include taille(100%,100%);
+        @include flexibilite();
+        @include position(relative);
+        #box-up{
+            @include taille(80%,25%);
+            @include flexibilite(row);
+            
+            #left{
+                @include taille(60%,100%);
+                @include flexbox(flex,none,center,none,none);
+                
+                #leftnum{
+                    @include taille(40%,auto);
+                    a{
+                        @extend %a;
+                        .fa{
+                            @extend %fa;
+                        }
+                    }
+                    
+                }
+                #leftweb{
+                    @include taille(60%,auto);
+                    @extend #leftnum;
+                        
+                }
+            }
+            #right{
+                @include taille(60%,100%);
+                @include flexbox(flex,none,center,space-between,none);
+                #fontaReseaux{
+                    @include taille (30%,auto);
+                    @extend %Colmena;
+                    @include flexibilite(row);
+                    i{
+                        &:hover{
+                            @include scale(1.5);
+                        }
+                    }
+                }
+                #fontaLogin{
+                    @include taille(45%,auto);
+                    @include flexibilite(row,space-around);
+                    a{
+                        @extend %a;
+                        i{
+                            @extend %Colmena;
+                        }
+                    }
+                }
+                #fontaSignUp{
+                    @extend #fontaLogin;
+                }
+            }
+
+            @include breakpoint(320px,max){
+                @include taille(100%,25%);
+                @include bg(black);
+                #left{
+                    display: none;
+                }
+                #right{
+                @include taille(100%,100%);
+                    #fontaReseaux{
+                    @include taille(25%,auto);
+                        
+                    }
+                    #fontaLogin{
+                        a{
+                            #{$fs}: 8px;
+                        }
+
+                    }
+                }
+            }
+            @include breakpoint(1910px,min){
+                #left{
+                    #leftnum{
+                        @include taille(40%,auto);
+                        a{
+                            #{$fs}: 20px;
+
+                            .fa{
+                                #{$fs}: 20px;
+
+                            }
+                        }
+                        
+                    }
+                    #leftweb{
+                        @include taille(60%,auto);
+                        .fa{
+                                #{$fs}: 20px;
+
+                            }
+                    }
+                }
+                #right{
+                @include taille(60%,100%);
+                    #fontaReseaux{
+                    @include taille(45%,auto);
+                    #{$fs}: 20px;
+                    }
+                    #fontaLogin{
+                    @include taille(45%,auto);
+
+                        a{
+                            #{$fs}: 20px;
+                        }
+
+                    }
+                }
+            }
+
+        }
+        .box-nav{
+            @include taille(100%,75%);
+            @include bg(linear-gradient(10deg,rgb(195, 1, 1),black));
+            @include flexibilite(space-between);
+            @include position(sticky);
+            .Logo{
+                @include taille(80%,100%);
+                @include flexibilite(row,space-between);
+                #imgLogo{
+                    @include taille(20%,70%);
+                    @include bgImg(url(../photo/ankoaylogo.png))
+                }
+                nav{
+                    @include taille(70%,70%);
+                    @include flexibilite();
+                    ul{
+                        @include taille(100%,50%);
+                        @include flexibilite(row);
+                        li{ 
+                            @include taille(auto,100%);
+                            @include pad(20px,0);
+                            a{
+                                @extend %a2;
+                            }
+                            &:hover{
+                                @include scale(1.1);
+                                #{$ff}: arial;
+                                @include borderB($noir);
+                            }
+                        }
+                    }
+                    
+                }
+                @include breakpoint(320px,max){
+                    @include taille(100%,100%);
+                    @include pad(10px,0);
+                    @include flexibilite(column,space-around);
+                    #imgLogo{
+                        @include taille(20%,50%);
+                    }
+                    nav{
+                    @include taille(100%,50%);
+                        ul{
+                            li{
+                                a{
+                                    #{$fs}: 8px;
+                        }}}
+                    }
+                }
+                @include breakpoint(1910px,min){
+                    @include flexibilite(row,space-around);
+                    @include taille(80%,100%);
+                    @include pad(10px,0);
+                    nav{
+                    @include taille(60%,50%);
+                        ul{
+                            li{
+                                a{
+                                    #{$fs}: 20px;
+                        }}}
+                    }
+                }
+            }
+        }
+    }
+}

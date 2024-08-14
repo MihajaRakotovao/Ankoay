@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "Montserrat-Black";
+    src: url(../fonts/Montserrat-Black.otf);
+}
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url(../fonts/Montserrat-Bold.otf);
+}
+@font-face {
+    font-family: "Montserrat-ExtraBold";
+    src: url(../fonts/Montserrat-ExtraBold.otf);
+}
+@font-face {
+    font-family: "Montserrat-ExtraLight";
+    src: url(../fonts/Montserrat-ExtraLight.otf);
+}
+@font-face {
+    font-family: "Montserrat-Light";
+    src: url(../fonts/Montserrat-Light.otf);
+}
+@font-face {
+    font-family: "Montserrat-Medium";
+    src: url(../fonts/Montserrat-Medium.otf);
+}
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url(../fonts/Montserrat-Regular.otf);
+}
+@font-face {
+    font-family: "Montserrat-Thin";
+    src: url(../fonts/Montserrat-Thin.otf);
+}
+@font-face {
+    font-family: "Montserrat-SemiBold";
+    src: url(../fonts/Montserrat-SemiBold.otf);
+}
+@font-face {
+    font-family: "Montserrat-thin";
+    src: url(../fonts/Montserrat-Thin.otf);
+}
+@font-face {
+    font-family: "RobotoCondensed-Regular";
+    src: url(../fonts/RobotoCondensed-Regular.ttf);
+}
+@font-face {
+    font-family: "blowbrush";
+    src: url(../fonts/blowbrush.ttf);
+}
+body{
+    overflow-x: hidden;
+}
+header{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.592);
+}
+.logo{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.logo img{
+    width: 120px;
+    height: 120px;
+    
+}
+nav{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+nav ul{
+    width: 80%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+nav li{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    
+}
+nav li:hover{
+    transform: scale(1.1);
+}
+nav li a{
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: black;
+    font-family: "Montserrat-Regular";
+}
+nav li:hover a{
+    color: red;
+    font-family: "Montserrat-Bold";
+
+}
+
+#section{
+    width: 100%;
+    height: 45em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(36, 36, 36);
+}
+label{
+    color: white;
+}
+#articleP{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#article {
+    width: 80%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#article input{
+    width: 45%;
+    height: 50%;
+    border: none;
+    box-shadow: 0px 2px 5px black;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+#BtnChoisir{
+    background: transparent;
+}
+#message{
+    width: 80%;
+    height: 30%;
+    border: none;
+    box-shadow: 0px 2px 5px black;
+    border-radius: 10px;
+    padding-left: 10px;
+
+}
+#BtnPost{
+    width: 80%;
+    height: 10%;
+    border: none;
+    box-shadow: 0px 2px 5px black;
+    border-radius: 10px;
+    background-color: rgb(0, 255, 89);
+    font-weight: bolder;
+    font-size: 26px;
+    color: white;
+}
+footer{
+    width: 100%;
+    height: 10em;
+    background-image: url(../image/fondVille.png);
+    /* background-color: blue; */
+    background-size: cover;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#fonta{
+    width: 40%;
+    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#fonta div{
+    width: 40px;
+    height: 40px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 50% 50%;
+}
+.fab{
+    font-size: 26px;
+}

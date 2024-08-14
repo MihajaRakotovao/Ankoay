@@ -1,0 +1,146 @@
+@include tout();
+body{
+    @include over;
+}
+header{
+    @include taille(100%,150px);
+    @include bg($fotsyB);
+    @include flexibilite();
+    #ensemble{
+        @include taille(100%,100%);
+        @include flexibilite();
+        @include position(relative);
+        .box-nav{
+            @include taille(100%,100%);
+            @include bg(linear-gradient(10deg,rgb(195, 1, 1),black));
+            @include flexibilite(space-between);
+            .Logo{
+                @include taille(80%,100%);
+                @include flexibilite(row,space-between);
+                #imgLogo{
+                    @include taille(20%,70%);
+                    @include bgImg(url(../../assets/photo/ankoaylogo.png))
+                }
+                nav{
+                    @include taille(70%,70%);
+                    @include flexibilite();
+                    ul{
+                        @include taille(100%,50%);
+                        @include flexibilite(row);
+                        li{ 
+                            @include taille(auto,100%);
+                            @include pad(20px,0);
+                            a{
+                                @extend %a2;
+                            }
+                            &:hover{
+                                @include scale(1.1);
+                                #{$ff}: arial;
+                                @include borderB($noir);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#section{
+    @include taille(100%,100vh);
+    @include bg(rgb(0, 0, 0));
+    @include flexibilite(row);
+    @include overfl();
+    .background{
+        @include taille(60%,70vh);
+        
+    @include flexibilite(row,space-around);
+
+    }
+    
+}
+#sectionIndex{
+    @include taille(100%,100vh);
+    @include flexibilite(row);
+    @include overfl();
+    .container{
+        @include taille(100%,100%);
+        @include flexibilite(column,space-around);
+        form{
+            @include taille(100%,90%);
+        }
+        
+    }
+}
+#sectionModifier-Article{
+    @include taille(100%,50em);
+    @include flexibilite(column,space-around);
+    .container{
+        @include taille(40%,100%);
+        @include flexibilite(column,space-around);
+        form{
+            @include taille(100%,90%);
+        }
+        
+    }
+}
+#sectionModifier-Evenement{
+    @include taille(100%,40em);
+    @include flexibilite(column,space-around);
+    .container{
+        @include taille(60%,100%);
+        @include flexibilite(column,space-around);
+        form{
+            @include taille(60%,90%);
+        }
+    }
+}
+#sectionNouveau_Article{
+    @include taille(100%,100vh);
+    @include bg($fotsy);
+    @include flexibilite(row,space-around);
+    @include overfl();
+    .container{
+    @include flexibilite(column,space-around);
+
+    }
+}
+#sectionNouveau_Events{
+    @include bg($fotsy);
+    @include flexibilite(row,space-around);
+    @include overfl();
+    @include pad(10px,10px);
+    .container{
+        @include flexibilite(column,space-around);
+        @include taille(50%,auto); 
+
+    }
+}
+#sectionJoueurAd{
+    @include taille(100%,auto);
+}
+#sectionUtilisateur{
+    @include taille(100%,auto);
+    @include bg($fotsy);
+}
+#sectionNouveau_Joueur{
+    @include taille(100%,50em);
+    @include flexibilite(column,space-around);
+    .container{
+        @include taille(40%,100%);
+        @include flexibilite(column,space-around);
+        form{
+            @include taille(100%,90%);
+        }
+        
+    }
+
+}
+footer{
+    @include taille(100%,10vh);
+    @include bg($noirB);
+    @include flexibilite(row,center);
+    text-align: center;
+    h3{
+        font-size: 16px;
+    }
+}
